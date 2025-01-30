@@ -12,6 +12,9 @@ export PATH=$PATH:$VIRTUAL_ENV/bin
 if [ ! -d anemoi-core ]; then
     echo "Cloning anemoi-core from metno"
     git clone --branch develop https://github.com/metno/anemoi-core.git
+    cd anemoi-core
+    git remote set-url origin git@github.com:metno/anemoi-core.git
+    cd ..
 fi
 
 # Install training, models, and graphs from anemoi-core
@@ -24,6 +27,9 @@ pip install --user --no-deps -e anemoi-core/graphs
 if [ ! -d anemoi-utils ]; then
     echo "Cloning anemoi-utils from ecmwf"
     git clone https://github.com/ecmwf/anemoi-utils.git
+    cd anemoi-utils
+    git remote set-url origin git@github.com:ecmwf/anemoi-utils.git
+    cd ..
 fi
 pip install --user --no-deps -e anemoi-utils
 
@@ -31,5 +37,8 @@ pip install --user --no-deps -e anemoi-utils
 if [ ! -d anemoi-datasets ]; then
     echo "Cloning anemoi-datasets from metno"
     git clone https://github.com/metno/anemoi-datasets.git
+    cd anemoi-datasets
+    git remote set-url origin git@github.com:metno/anemoi-datasets.git
+    cd ..
 fi
 pip install --user --no-deps -e anemoi-datasets
