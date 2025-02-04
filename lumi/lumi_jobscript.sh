@@ -17,6 +17,7 @@ CONFIG_NAME=CONFIGNAME.yaml #This file should be located in run-anemoi/lumi
 #Should not have to change these
 PROJECT_DIR=/scratch/$SLURM_JOB_ACCOUNT
 CONTAINER_SCRIPT=$(pwd -P)/run_pytorch.sh
+chmod 770 ${CONTAINER_SCRIPT}
 CONFIG_DIR=$(pwd -P)
 CONTAINER=$PROJECT_DIR/aifs/container/containers/anemoi-training-pytorch-2.2.2-rocm-5.6.1-py-3.11.5.sif
 VENV=$(pwd -P)/.venv
