@@ -17,6 +17,7 @@ CONFIG_NAME=YOUR-CONFIG #This file should be located in run-anemoi/lumi
 #Should not have to change these
 PROJECT_DIR=/scratch/$SLURM_JOB_ACCOUNT
 CONTAINER_SCRIPT=$(pwd -P)/run_pytorch_rocm603.sh
+chmod 770 ${CONTAINER_SCRIPT}
 CONFIG_DIR=$(pwd -P)
 
 # NB! in order to avoid NCCL timeouts it is adviced to use 
