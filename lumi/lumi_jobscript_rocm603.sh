@@ -2,23 +2,14 @@
 
 #SBATCH --output=/users/%u/%x_%j.out
 #SBATCH --error=/users/%u/%x_%j.err
-
-# ACCOUNT + PARTION
-
+#SBATCH --nodes=32
+#SBATCH --ntasks-per-node=8
 #SBATCH --account=project_465001383
 #SBATCH --partition=standard-g
-
-# NODE AND GPU SPECIFICATION
-
 #SBATCH --gpus-per-node=8
-#SBATCH --ntasks-per-node=8
-#SBATCH --nodes=32
-#SBATCH --exclusive
-
-# WALLTIME AND JOBNAME
-
 #SBATCH --time=22:00:00
-#SBATCH --job-name=NCCL-TEST-ROCM603
+#SBATCH --job-name=at-train
+#SBATCH --exclusive
 
 
 #Change this
