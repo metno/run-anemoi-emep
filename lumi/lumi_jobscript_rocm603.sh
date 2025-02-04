@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #SBATCH --output=/users/%u/%x_%j.out
 #SBATCH --error=/users/%u/%x_%j.err
 #SBATCH --nodes=32
