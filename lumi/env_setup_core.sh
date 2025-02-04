@@ -28,7 +28,6 @@ if [ ! -d anemoi-utils ]; then
     echo "Cloning anemoi-utils from ecmwf"
     git clone https://github.com/ecmwf/anemoi-utils.git
     cd anemoi-utils
-    git remote set-url origin git@github.com:ecmwf/anemoi-utils.git
     cd ..
 fi
 pip install --user --no-deps -e anemoi-utils
