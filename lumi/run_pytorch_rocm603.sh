@@ -67,11 +67,9 @@ export NCCL_BUFFSIZE=67108864 # 64mb buffsize
 # Increasing the number of CUDA CTAs 
 # per peer from 1 to 4 in NCCL send/recv operations 
 # may/can improve performance in sparse communication patterns 
-# set NCCL_NCHANNELS_PER_NET_PEER=4
-# Comment [warning]: may cause segmentation fault due to some NCCL channels
-# tries to access memory which is restricted or which doesnt exist
-# if that occurs set NCCL_NCHANNELS_PER_NET_PEER
-export NCCL_NCHANNELS_PER_NET_PEER=1
+# set NCCL_NCHANNELS_PER_NET_PEER=4. Makes communication between
+# more stable.
+export NCCL_NCHANNELS_PER_NET_PEER=4
 
 # Use CUDA cuMem* functions to allocate memory in NCCL.
 export NCCL_CUMEM_ENABLE=1
