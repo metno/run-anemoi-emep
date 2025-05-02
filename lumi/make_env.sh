@@ -5,8 +5,8 @@ cd $(pwd -P)
 # Make files executable in the container (might not be needed)
 chmod 770 env_setup.sh
 
-PROJECT_DIR=/pfs/lustrep4/scratch/project_465001383
-CONTAINER=$PROJECT_DIR/aifs/container/containers/aifs-met-pytorch-2.2.0-rocm-5.6.1-py3.9-v2.0-new-correct-anemoi-models-sort-vars.sif
+PROJECT_DIR=/pfs/lustrep2/scratch/project_465001905
+CONTAINER=$PROJECT_DIR/container/lumi-rocm-6.2.2-python-3.12-pytorch-2.5.1-kl-aq-anemoi.sif
 
 # Clone and pip install anemoi repos from the container
 singularity exec -B /pfs:/pfs $CONTAINER $(pwd -P)/env_setup.sh
