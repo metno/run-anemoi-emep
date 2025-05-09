@@ -90,7 +90,8 @@ export HSA_FORCE_FINE_GRAIN_PCIE=1
 export HYDRA_FULL_ERROR=1
 export AIFS_BASE_SEED=1337420
 
-export PYTHONUSERBASE=$VIRTUAL_ENV
-export PATH=$PATH:$VIRTUAL_ENV/bin
+# export PYTHONUSERBASE=$VIRTUAL_ENV
+# export PATH=$PATH:$VIRTUAL_ENV/bin
 
+anemoi-training mlflow login --url https://mlflow.ecmwf.int
 anemoi-training train --config-dir=$1 --config-name=$2
