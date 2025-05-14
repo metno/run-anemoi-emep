@@ -2,10 +2,10 @@
 #SBATCH --output=/users/%u/%x_%j.out
 #SBATCH --error=/users/%u/%x_%j.err
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=8
+#SBATCH --ntasks-per-node=1
 #SBATCH --account=project_465001905
 #SBATCH --partition=standard-g
-#SBATCH --gpus-per-node=8
+#SBATCH --gpus-per-node=1
 #SBATCH --time=24:00:00
 #SBATCH --job-name=kl-aq-anemoi
 #SBATCH --exclusive

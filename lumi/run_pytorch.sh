@@ -93,5 +93,7 @@ export AIFS_BASE_SEED=1337420
 # export PYTHONUSERBASE=$VIRTUAL_ENV
 # export PATH=$PATH:$VIRTUAL_ENV/bin
 
+set -e
+
 anemoi-training mlflow login --url https://mlflow.ecmwf.int
 anemoi-training train --config-dir=$1 --config-name=$2
