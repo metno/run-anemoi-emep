@@ -14,13 +14,18 @@
 #Change this
 CONFIG_NAME=config_v4_lumi.yaml
 CONFIG_DIR=/users/ulimoenm/emep-anemoi/training/config4
-# /users/mousinge/Repos/emep-anemoi/training/config3/config.yaml #This file should be located in run-anemoi/lumi
+
+# There is a bug in anemoi-core/training https://github.com/ecmwf/anemoi-core/issues/320
+# which will need to be fixed at some point. Meanwhile use the below container, but run
+# first singularity shell $CONTAINER, then pip install -e ~/anemoi-core/training to install
+# the package to a location where the container python knows to look, also when the container
+# is restarted. The temporary fix is to remove the problematic line.
+CONTAINER=/project/project_465001905/container/pytorch-rocm-6.2.4-python-3.12-pytorch-v2.6.0-kl-aq-anemoi.sif
 
 #Should not have to change these
 PROJECT_DIR=/scratch/$SLURM_JOB_ACCOUNT
 CONTAINER_SCRIPT=$(pwd -P)/run_pytorch.sh
 chmod 770 ${CONTAINER_SCRIPT}
-CONTAINER=/project/project_465001905/container/pytorch-rocm-6.2.4-python-3.12-pytorch-v2.6.0-kl-aq-anemoi.sif
 # VENV=$(pwd -P)/.venv
 # export VIRTUAL_ENV=$VENV
 
